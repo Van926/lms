@@ -82,6 +82,21 @@ ${trackingCode}`);
       attachment: null,
     });
   }
+    await fetch(
+    "https://uluxjywikdmfhrqrmnqr.supabase.co/functions/v1/send-email",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVsdXhqeXdpa2RtZmhycXJtbnFyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk2NTI5NjgsImV4cCI6MjA4NTIyODk2OH0.VXXVJxCx5IHuIY95rOiQG_lqVJsaQlprnN6p-hnA_bw",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVsdXhqeXdpa2RtZmhycXJtbnFyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk2NTI5NjgsImV4cCI6MjA4NTIyODk2OH0.VXXVJxCx5IHuIY95rOiQG_lqVJsaQlprnN6p-hnA_bw"
+      },
+      body: JSON.stringify({
+        email: form.email,
+        trackingCode: trackingCode
+      })
+    }
+  );
 };
 
   // Form
